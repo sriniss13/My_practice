@@ -1,0 +1,292 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="E:\practice\WebApp\bootstrap-3.3.7-dist\css/bootstrap.min.css">
+  <link rel="stylesheet" href="foot.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="E:\practice\WebApp\bootstrap-3.3.7-dist\js/bootstrap.min.js"></script>
+
+
+  
+ <!-- <html>
+    <head>
+      <title>
+  
+      </title>
+    </head>
+  
+     <body>
+  
+     </body>
+  </html>
+-->
+
+  
+  MPLES SUPPORT SEND FEEDBACK
+Get Started
+Authentication and Quota
+Get API Key
+Usage Limits
+Tutorials
+Adding a Map with a Marker
+Marker Clustering
+Importing Data into Maps
+Visualizing Data
+Combining Data
+Mapping with Firebase
+Geolocation
+Using MySQL and PHP with Maps
+Saving User-Added Data with Maps
+Concepts
+Overview
+Versioning
+Creating a Map
+Map Types
+Localizing the Map
+Styling a Map
+Start Styling your Map
+Custom Legends
+Style Reference
+Interacting with the Map
+Controls
+Events
+Scrolling and Panning Behavior
+Signed-in Maps
+Drawing on the Map
+Overview
+Markers
+Custom Markers
+Info Windows
+Shapes
+Symbols
+Ground Overlays
+Custom Overlays
+Displaying data
+Overview
+Data layer
+Fusion Tables
+Heatmap
+Displaying KML
+KML and GeoRSS
+Traffic, Transit and Bicycling Layer
+Services
+Directions
+Distance Matrix
+Elevation
+Geocoding
+Maximum Zoom Imagery
+Street View
+Libraries
+Overview
+Drawing Library
+Geometry Library
+Places Library
+Autocomplete for Addresses and Search
+Visualization Library
+More Guides
+Upgrading from Maps JavaScript API v2 to v3
+Other APIs
+Embed API
+Static Maps API
+Street View Image API
+Contents
+Introduction
+Try it yourself
+Getting started
+Step 1: Create an HTML page
+Step 2: Add a map with a marker
+Step 3: Get an API key
+Tips and trouble-shooting
+Adding a Google Map with a Marker to Your Website
+
+Introduction
+
+This tutorial shows you how to add a simple Google map with a marker to a web page. It suits people with beginner or intermediate knowledge of HTML and CSS, and a little knowledge of JavaScript. For an advanced guide to creating maps, read the developer's guide.
+
+Below is the map you'll create using this tutorial.
+
+
+The section below displays the entire code you need to create the map in this tutorial.
+
+function initMap() {
+  var uluru = {lat: -25.363, lng: 131.044};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: uluru
+  });
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+  });
+}
+<h3>My Google Maps Demo</h3>
+<div id="map"></div>
+#map {
+  height: 400px;
+  width: 100%;
+ }
+<!-- Replace the value of the key parameter with your own API key. -->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap">
+</script>
+Try it yourself
+
+Hover at top right of the code block to copy the code or open it in JSFiddle.
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+  </body>
+</html>
+Getting started
+
+There are three stepsa to creating a Google map with a marker on your web page:
+
+Create an HTML page
+Add a map with a marker
+Get an API key
+You need a web browser. Choose a well-known one like Google Chrome (recommended), Firefox, Safari or Internet Explorer, based on your platform.
+
+
+Step 1: Create an HTML page
+
+Here's the code for a basic HTML web page:
+
+<h3>My Google Maps Demo</h3>
+<div id="map"></div>
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+  </body>
+</html>
+Note that this is a very basic page with a heading level three (h3), a single div element, and a style element. You can add any content you like to the web page.
+
+Try it yourself
+
+At the top right corner of the sample code above are three buttons. Click the left-most button to open the sample in JSFiddle.
+
+Understanding the code
+
+The code below creates an HTML page consisting of a head and a body.
+
+<html>
+ <head>
+ </head>
+ <body>
+ </body>
+</html>
+You can add a heading level three above the map using the code below.
+
+<h3>My Google Maps Demo</h3>
+The code below defines an area of the page for your Google map.
+
+<div id="map"></div>
+At this stage of the tutorial, the div appears as just a grey block, because you have not yet added a map. The code below describes the CSS that sets the size and color of the div.
+
+<style>
+ #map {
+   width: 100%;
+   height: 400px;
+   background-color: grey;
+ }
+</style>
+In the above code, the style element sets the div size for your map. Set the div width and height to greater than 0px for the map to be visible. In this case, the div is set to a height of 400 pixels, and width of 100% to display the across the width of your web page. Apply background-color: grey to the div to view the area for your map on the web page.
+
+
+Step 2: Add a map with a marker
+
+This section shows you how to load the Google Maps JavaScript API into your web page, and how to write your own JavaScript that uses the API to add a map with a marker on it.
+
+function initMap() {
+  var uluru = {lat: -25.363, lng: 131.044};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: uluru
+  });
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+  });
+}
+<h3>My Google Maps Demo</h3>
+<div id="map"></div>
+#map {
+  height: 400px;
+  width: 100%;
+ }
+<!-- Replace the value of the key parameter with your own API key. -->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap">
+</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+  </body>
+</html>
