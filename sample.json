@@ -1,0 +1,23 @@
+[
+ 					{ 
+ 						"address" :"/home",
+ 						"name" :"Home"
+ 					},
+ 					{ 
+ 						"address" :"/project",
+ 						"name" :"Project"
+ 					},
+ 					{ 
+ 						"address" :"/qualification",
+ 						"name" :"Qualification"
+ 					},
+ 					{ 
+ 						"address" :"/contactus",
+ 						"name" :"Contactus"
+ 					},
+ 					{ 
+ 						"address" :"/contactme",
+ 						"name" :"contactme"
+ 					}
+
+ 				]
