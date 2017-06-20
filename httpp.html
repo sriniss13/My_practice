@@ -1,27 +1,5 @@
-<!DOCTYPE html>
-<html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<body>
+center: {lat: 11.655083, lng: 78.276483}, 
 
-<div ng-app="myApp" ng-controller="myCtrl"> 
 
-<p>Today's welcome message is:</p>
-
-<h1>{{myWelcome}}</h1>
-
-</div>
-
-<p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
-
-<script>
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope, $http) {
-  $http.get("./sample.json")
-  .then(function(response) {
-      $scope.myWelcome = response.data;
-  });
-});
-</script>
-
-</body>
-</html>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKRWSTswRMZOy4gaBbzB-E0temMyUIn_I&callback=initMap"
+    async defer></script>

@@ -1,5 +1,5 @@
 
-var app = angular.module("myApp", ["ngRoute","home"]);
+var app = angular.module("myApp", ["ngRoute","home","contactme"]);
 app.config(function($routeProvider,$locationProvider) {
     $routeProvider
     .when("/home", {
@@ -18,40 +18,35 @@ app.config(function($routeProvider,$locationProvider) {
     })
     .when("/contactme",{
     	templateUrl :"contactme/contactme.html",
-    	controller :"myCtrl"
+    	controller :"contactmeCtrl"
     })
     .when("/hobbies",{
-    	templateUrl : "hobbies/hobbies.html"
+    	templateUrl : "hobbies/hobbies.hxtml"
     })
     .when("/certification",{
-    	templateUrl : "certification/certification.html"
+    	templateUrl : "certification/certification.html",
+        controller  : "cert"
     })
     .when("/Resume",{
     	templateUrl : "/index.html"
     })
-    .otherwise({"redirectTo":'/'})
+    .otherwise({"redirectTo":'/home'})
     $locationProvider.html5Mode(true);
     
 });
 
 app.controller("nav",function($scope, $http){
 
-        $http.get("sample.json").then(function(response){
-            $scope.navbar=response.data;
-        });
+        $http.get("http://localhost:8080/").then(function(response){
+            console.log(response);
+           $scope.navbar=response.data.navbar;
+           $scope.dropdown=response.data.dropdown;
+        }); 
  				
 
- 				$scope.dropdown=[
-  					{ 
- 						address :'/hobbies',
- 						name :'Hobbies'
- 					},
- 					{ 
- 						address :'/certification',
- 						name :'Certification'
- 					}
-  	]
+ 				
  });
+
 
     
   
