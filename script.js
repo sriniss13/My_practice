@@ -40,7 +40,7 @@ app.controller("nav",function($scope, $http){
         $http.get("http://localhost:8080/").then(function(response){
             console.log(response);
            $scope.navbar=response.data.navbar;
-           $scope.dropdown=response.data.dropdown;
+           //$scope.dropdown=response.data.dropdown;
         }); 
  				
 
@@ -49,7 +49,7 @@ app.controller("nav",function($scope, $http){
 
 
     
-  
+ 
   
   	
  
